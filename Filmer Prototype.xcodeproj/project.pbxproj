@@ -14,6 +14,16 @@
 		8C1DFCF61B98DEDD002CF8B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1DFCF51B98DEDD002CF8B9 /* Images.xcassets */; };
 		8C1DFCF91B98DEDD002CF8B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C1DFCF71B98DEDD002CF8B9 /* LaunchScreen.xib */; };
 		8C1DFD051B98DEDD002CF8B9 /* Filmer_PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DFD041B98DEDD002CF8B9 /* Filmer_PrototypeTests.swift */; };
+		8C1DFD141B98E3DA002CF8B9 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD0E1B98E3DA002CF8B9 /* AssetsLibrary.framework */; };
+		8C1DFD151B98E3DA002CF8B9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD0F1B98E3DA002CF8B9 /* AVFoundation.framework */; };
+		8C1DFD161B98E3DA002CF8B9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD101B98E3DA002CF8B9 /* CoreMedia.framework */; };
+		8C1DFD171B98E3DA002CF8B9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD111B98E3DA002CF8B9 /* MediaPlayer.framework */; };
+		8C1DFD181B98E3DA002CF8B9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD121B98E3DA002CF8B9 /* MobileCoreServices.framework */; };
+		8C1DFD191B98E3DA002CF8B9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD131B98E3DA002CF8B9 /* QuartzCore.framework */; };
+		8C1DFD1E1B98E84D002CF8B9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DFD1D1B98E84D002CF8B9 /* RecordViewController.swift */; };
+		8C1DFD201B98E86C002CF8B9 /* ViewSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DFD1F1B98E86C002CF8B9 /* ViewSelectViewController.swift */; };
+		8C1DFD221B98E8A6002CF8B9 /* MergeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DFD211B98E8A6002CF8B9 /* MergeViewController.swift */; };
+		8C1DFD241B98F3DC002CF8B9 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD231B98F3DC002CF8B9 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +48,16 @@
 		8C1DFCFE1B98DEDD002CF8B9 /* Filmer PrototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Filmer PrototypeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1DFD031B98DEDD002CF8B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C1DFD041B98DEDD002CF8B9 /* Filmer_PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filmer_PrototypeTests.swift; sourceTree = "<group>"; };
+		8C1DFD0E1B98E3DA002CF8B9 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		8C1DFD0F1B98E3DA002CF8B9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8C1DFD101B98E3DA002CF8B9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		8C1DFD111B98E3DA002CF8B9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		8C1DFD121B98E3DA002CF8B9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8C1DFD131B98E3DA002CF8B9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8C1DFD1D1B98E84D002CF8B9 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		8C1DFD1F1B98E86C002CF8B9 /* ViewSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSelectViewController.swift; sourceTree = "<group>"; };
+		8C1DFD211B98E8A6002CF8B9 /* MergeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeViewController.swift; sourceTree = "<group>"; };
+		8C1DFD231B98F3DC002CF8B9 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +65,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1DFD241B98F3DC002CF8B9 /* Photos.framework in Frameworks */,
+				8C1DFD141B98E3DA002CF8B9 /* AssetsLibrary.framework in Frameworks */,
+				8C1DFD151B98E3DA002CF8B9 /* AVFoundation.framework in Frameworks */,
+				8C1DFD161B98E3DA002CF8B9 /* CoreMedia.framework in Frameworks */,
+				8C1DFD171B98E3DA002CF8B9 /* MediaPlayer.framework in Frameworks */,
+				8C1DFD181B98E3DA002CF8B9 /* MobileCoreServices.framework in Frameworks */,
+				8C1DFD191B98E3DA002CF8B9 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +88,13 @@
 		8C1DFCDD1B98DEDC002CF8B9 = {
 			isa = PBXGroup;
 			children = (
+				8C1DFD231B98F3DC002CF8B9 /* Photos.framework */,
+				8C1DFD0E1B98E3DA002CF8B9 /* AssetsLibrary.framework */,
+				8C1DFD0F1B98E3DA002CF8B9 /* AVFoundation.framework */,
+				8C1DFD101B98E3DA002CF8B9 /* CoreMedia.framework */,
+				8C1DFD111B98E3DA002CF8B9 /* MediaPlayer.framework */,
+				8C1DFD121B98E3DA002CF8B9 /* MobileCoreServices.framework */,
+				8C1DFD131B98E3DA002CF8B9 /* QuartzCore.framework */,
 				8C1DFCE81B98DEDD002CF8B9 /* Filmer Prototype */,
 				8C1DFD011B98DEDD002CF8B9 /* Filmer PrototypeTests */,
 				8C1DFCE71B98DEDD002CF8B9 /* Products */,
@@ -79,11 +113,13 @@
 		8C1DFCE81B98DEDD002CF8B9 /* Filmer Prototype */ = {
 			isa = PBXGroup;
 			children = (
-				8C1DFCEB1B98DEDD002CF8B9 /* AppDelegate.swift */,
-				8C1DFCF01B98DEDD002CF8B9 /* ViewController.swift */,
-				8C1DFCF21B98DEDD002CF8B9 /* Main.storyboard */,
-				8C1DFCF51B98DEDD002CF8B9 /* Images.xcassets */,
+				8C1DFD1B1B98E618002CF8B9 /* Controller Layer */,
+				8C1DFD1A1B98E5FA002CF8B9 /* View Layer */,
 				8C1DFCF71B98DEDD002CF8B9 /* LaunchScreen.xib */,
+				8C1DFCF21B98DEDD002CF8B9 /* Main.storyboard */,
+				8C1DFD1C1B98E61A002CF8B9 /* Model Layer */,
+				8C1DFCEB1B98DEDD002CF8B9 /* AppDelegate.swift */,
+				8C1DFCF51B98DEDD002CF8B9 /* Images.xcassets */,
 				8C1DFCED1B98DEDD002CF8B9 /* Filmer_Prototype.xcdatamodeld */,
 				8C1DFCE91B98DEDD002CF8B9 /* Supporting Files */,
 			);
@@ -113,6 +149,31 @@
 				8C1DFD031B98DEDD002CF8B9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C1DFD1A1B98E5FA002CF8B9 /* View Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Layer";
+			sourceTree = "<group>";
+		};
+		8C1DFD1B1B98E618002CF8B9 /* Controller Layer */ = {
+			isa = PBXGroup;
+			children = (
+				8C1DFCF01B98DEDD002CF8B9 /* ViewController.swift */,
+				8C1DFD1D1B98E84D002CF8B9 /* RecordViewController.swift */,
+				8C1DFD1F1B98E86C002CF8B9 /* ViewSelectViewController.swift */,
+				8C1DFD211B98E8A6002CF8B9 /* MergeViewController.swift */,
+			);
+			name = "Controller Layer";
+			sourceTree = "<group>";
+		};
+		8C1DFD1C1B98E61A002CF8B9 /* Model Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Model Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +220,9 @@
 		8C1DFCDE1B98DEDC002CF8B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Eric Mentele";
 				TargetAttributes = {
 					8C1DFCE51B98DEDD002CF8B9 = {
@@ -218,6 +281,9 @@
 				8C1DFCF11B98DEDD002CF8B9 /* ViewController.swift in Sources */,
 				8C1DFCEC1B98DEDD002CF8B9 /* AppDelegate.swift in Sources */,
 				8C1DFCEF1B98DEDD002CF8B9 /* Filmer_Prototype.xcdatamodeld in Sources */,
+				8C1DFD221B98E8A6002CF8B9 /* MergeViewController.swift in Sources */,
+				8C1DFD1E1B98E84D002CF8B9 /* RecordViewController.swift in Sources */,
+				8C1DFD201B98E86C002CF8B9 /* ViewSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +346,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -348,6 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Filmer Prototype/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ericmentele.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -358,6 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Filmer Prototype/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ericmentele.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -366,16 +435,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Filmer PrototypeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ericmentele.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Filmer Prototype.app/Filmer Prototype";
 			};
@@ -385,12 +452,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Filmer PrototypeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ericmentele.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Filmer Prototype.app/Filmer Prototype";
 			};
@@ -415,6 +480,7 @@
 				8C1DFD0A1B98DEDD002CF8B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C1DFD0B1B98DEDD002CF8B9 /* Build configuration list for PBXNativeTarget "Filmer PrototypeTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +489,7 @@
 				8C1DFD0D1B98DEDD002CF8B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

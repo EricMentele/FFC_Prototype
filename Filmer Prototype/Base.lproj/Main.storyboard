@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p8k-9w-eYx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Filmer_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,271 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMc-lz-8oS">
+                                <rect key="frame" x="257" y="175" width="86" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="1hl-pM-j9F"/>
+                                </constraints>
+                                <state key="normal" title="Record">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9jJ-N4-EKp" kind="show" identifier="REC" id="5vF-ia-0Qx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJZ-MY-hPe">
+                                <rect key="frame" x="232" y="285" width="136" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="mi5-Wm-jCU"/>
+                                </constraints>
+                                <state key="normal" title="View">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="KBE-sd-Mem" kind="show" identifier="VIEW" id="tbt-lr-Eee"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUm-em-2nx">
+                                <rect key="frame" x="277" y="395" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Az0-oo-414"/>
+                                </constraints>
+                                <state key="normal" title="Merge">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="am0-wQ-NcA" kind="show" identifier="MERGE" id="jPQ-Tw-X6H"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vJZ-MY-hPe" firstAttribute="top" secondItem="TMc-lz-8oS" secondAttribute="bottom" constant="80" id="MYJ-eu-HsW"/>
+                            <constraint firstItem="TMc-lz-8oS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MbL-tJ-qlV"/>
+                            <constraint firstItem="vJZ-MY-hPe" firstAttribute="centerX" secondItem="TMc-lz-8oS" secondAttribute="centerX" id="lBG-MB-qhp"/>
+                            <constraint firstItem="vJZ-MY-hPe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ry4-NR-Kd4"/>
+                            <constraint firstItem="eUm-em-2nx" firstAttribute="top" secondItem="vJZ-MY-hPe" secondAttribute="bottom" constant="80" id="s8d-XT-E1C"/>
+                            <constraint firstItem="vJZ-MY-hPe" firstAttribute="centerX" secondItem="eUm-em-2nx" secondAttribute="centerX" id="wOa-Al-etV"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BaR-NP-Jln"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1057" y="337"/>
+        </scene>
+        <!--View Select View Controller-->
+        <scene sceneID="0lt-J7-SXK">
+            <objects>
+                <viewController id="KBE-sd-Mem" customClass="ViewSelectViewController" customModule="Filmer_Prototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bcc-cD-tNl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Muc-iS-ruX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WLx-vW-6v0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvt-SK-E3G">
+                                <rect key="frame" x="240" y="242" width="121" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="O3l-Zz-2iz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="KBE-sd-Mem" eventType="touchUpInside" id="FFu-1B-SI1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wvt-SK-E3G" firstAttribute="top" secondItem="bcc-cD-tNl" secondAttribute="bottom" constant="178" id="W9f-VT-WUa"/>
+                            <constraint firstItem="Wvt-SK-E3G" firstAttribute="centerY" secondItem="WLx-vW-6v0" secondAttribute="centerY" id="fwC-I2-4Iz"/>
+                            <constraint firstItem="Wvt-SK-E3G" firstAttribute="centerX" secondItem="WLx-vW-6v0" secondAttribute="centerX" id="uDe-d6-3nO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="Wvt-SK-E3G" id="TUC-pf-3xf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ay2-XY-c3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2413" y="337"/>
+        </scene>
+        <!--Merge View Controller-->
+        <scene sceneID="PQw-qr-iWY">
+            <objects>
+                <viewController id="am0-wQ-NcA" customClass="MergeViewController" customModule="Filmer_Prototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q6p-kT-xyk"/>
+                        <viewControllerLayoutGuide type="bottom" id="zDi-fR-feS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r1f-Iy-nRk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57o-BT-nQ6">
+                                <rect key="frame" x="233" y="226" width="134" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="xZK-5s-1dF"/>
+                                </constraints>
+                                <state key="normal" title="Clip 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAsset1:" destination="am0-wQ-NcA" eventType="touchUpInside" id="Wpy-ex-cb0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jI5-Rn-Sko">
+                                <rect key="frame" x="237" y="172" width="126" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="UHJ-gl-1W9"/>
+                                </constraints>
+                                <state key="normal" title="Load Audio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAudio:" destination="am0-wQ-NcA" eventType="touchUpInside" id="SZf-NX-AMb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BV-t6-bM2">
+                                <rect key="frame" x="227" y="285" width="147" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="90f-6F-vms"/>
+                                </constraints>
+                                <state key="normal" title="Clip 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAsset2:" destination="am0-wQ-NcA" eventType="touchUpInside" id="gsM-po-AhQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwc-8f-Bjo">
+                                <rect key="frame" x="213" y="405" width="174" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="ydD-3y-Odp"/>
+                                </constraints>
+                                <state key="normal" title="Merge &amp; Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mergeMedia:" destination="am0-wQ-NcA" eventType="touchUpInside" id="Ihh-QY-K6Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkb-Hv-NWo">
+                                <rect key="frame" x="277" y="347" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="CxV-pp-1G1"/>
+                                </constraints>
+                                <state key="normal" title="Clip 3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAsset3:" destination="am0-wQ-NcA" eventType="touchUpInside" id="jwc-LW-bwu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uwc-8f-Bjo" firstAttribute="centerX" secondItem="r1f-Iy-nRk" secondAttribute="centerX" id="0w7-sj-YEr"/>
+                            <constraint firstItem="5BV-t6-bM2" firstAttribute="centerY" secondItem="r1f-Iy-nRk" secondAttribute="centerY" id="7HE-I8-mKr"/>
+                            <constraint firstItem="57o-BT-nQ6" firstAttribute="centerX" secondItem="jI5-Rn-Sko" secondAttribute="centerX" id="BXX-35-UKo"/>
+                            <constraint firstItem="Mkb-Hv-NWo" firstAttribute="centerX" secondItem="uwc-8f-Bjo" secondAttribute="centerX" id="GT7-PT-Z5l"/>
+                            <constraint firstItem="57o-BT-nQ6" firstAttribute="top" secondItem="jI5-Rn-Sko" secondAttribute="bottom" constant="24" id="JrW-ro-AqZ"/>
+                            <constraint firstItem="Mkb-Hv-NWo" firstAttribute="top" secondItem="5BV-t6-bM2" secondAttribute="bottom" constant="32" id="ZtC-Y4-nOg"/>
+                            <constraint firstItem="uwc-8f-Bjo" firstAttribute="top" secondItem="Mkb-Hv-NWo" secondAttribute="bottom" constant="28" id="bHN-pz-mYM"/>
+                            <constraint firstItem="5BV-t6-bM2" firstAttribute="top" secondItem="57o-BT-nQ6" secondAttribute="bottom" constant="29" id="doR-co-YQJ"/>
+                            <constraint firstItem="57o-BT-nQ6" firstAttribute="centerX" secondItem="5BV-t6-bM2" secondAttribute="centerX" id="jwL-u0-Ni4"/>
+                            <constraint firstItem="5BV-t6-bM2" firstAttribute="centerX" secondItem="Mkb-Hv-NWo" secondAttribute="centerX" id="qFG-kc-0DR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zLH-RN-jFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771" y="712"/>
+        </scene>
+        <!--Record View Controller-->
+        <scene sceneID="5cP-vq-TRu">
+            <objects>
+                <viewController id="9jJ-N4-EKp" customClass="RecordViewController" customModule="Filmer_Prototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iRQ-QG-eNM"/>
+                        <viewControllerLayoutGuide type="bottom" id="JUC-1z-Y7E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rGg-MS-FNw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22W-q0-Pgy">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcH-IP-9g9">
+                                <rect key="frame" x="222" y="224" width="157" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="Bwy-Xj-bnk"/>
+                                    <constraint firstAttribute="width" constant="157" id="Yq4-Ri-rfS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordClip:" destination="9jJ-N4-EKp" eventType="touchUpInside" id="gBj-36-LgJ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fd1-X9-gFM">
+                                <rect key="frame" x="20" y="472" width="116" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="BGH-Ni-Nwy"/>
+                                    <constraint firstAttribute="width" constant="116" id="jAq-Pr-1xf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JUC-1z-Y7E" firstAttribute="top" secondItem="fd1-X9-gFM" secondAttribute="bottom" constant="20" id="3gg-de-KgH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="22W-q0-Pgy" secondAttribute="trailing" constant="-20" id="E2X-z2-faN"/>
+                            <constraint firstItem="fd1-X9-gFM" firstAttribute="leading" secondItem="rGg-MS-FNw" secondAttribute="leadingMargin" id="RS4-eT-qmS"/>
+                            <constraint firstItem="JUC-1z-Y7E" firstAttribute="top" secondItem="22W-q0-Pgy" secondAttribute="bottom" id="daL-7e-rVr"/>
+                            <constraint firstItem="JcH-IP-9g9" firstAttribute="centerY" secondItem="rGg-MS-FNw" secondAttribute="centerY" id="dsg-8Q-wYI"/>
+                            <constraint firstItem="JcH-IP-9g9" firstAttribute="centerX" secondItem="rGg-MS-FNw" secondAttribute="centerX" id="hDl-Sc-WoE"/>
+                            <constraint firstItem="22W-q0-Pgy" firstAttribute="leading" secondItem="rGg-MS-FNw" secondAttribute="leadingMargin" constant="-20" id="tIR-Dx-Bhg"/>
+                            <constraint firstItem="22W-q0-Pgy" firstAttribute="top" secondItem="rGg-MS-FNw" secondAttribute="topMargin" id="tyF-I8-Abf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="capturedVideo" destination="fd1-X9-gFM" id="yLD-kg-ntF"/>
+                        <outlet property="recordButton" destination="JcH-IP-9g9" id="NFW-G8-BbJ"/>
+                        <outlet property="recordingView" destination="22W-q0-Pgy" id="GoL-Te-Sfb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OGa-3m-YXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771" y="-4"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4BY-bv-zdA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p8k-9w-eYx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nvp-e9-j6d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sdY-L7-2en"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3GI-xv-VHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="337"/>
         </scene>
     </scenes>
 </document>

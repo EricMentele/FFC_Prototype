@@ -14,10 +14,9 @@ import AssetsLibrary
 import MediaPlayer
 import Photos
 
-class MergeViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MPMediaPickerControllerDelegate {
+class MergeViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let clipPicker = UIImagePickerController()
-    let audioPicker = MPMediaPickerController()
     
     var isSelectingAsset: Int!
     // video clip 1
@@ -33,12 +32,11 @@ class MergeViewController: UIViewController, UINavigationControllerDelegate, UII
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // movie selection
         clipPicker.delegate   = self
         clipPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         clipPicker.mediaTypes = [kUTTypeMovie as String]
-        audioPicker.delegate  = self
-        audioPicker.prompt    = "Select Audio"
-        
+        // audio selection
     }
 
     @IBAction func loadAsset1(sender: AnyObject) {
@@ -71,8 +69,10 @@ class MergeViewController: UIViewController, UINavigationControllerDelegate, UII
         
     }
     @IBAction func loadAudio(sender: AnyObject) {
+    }
+    
+    @IBAction func audioUnwindSegue(unwindSegue: UIStoryboardSegue){
         
-        self.presentViewController(audioPicker, animated: true, completion: nil)
     }
     
     @IBAction func mergeMedia(sender: AnyObject) {
@@ -87,29 +87,42 @@ class MergeViewController: UIViewController, UINavigationControllerDelegate, UII
             // create separate video tracks for individual adjustments before merge
             let firstTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
                 preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+            
             do {
+                
                 try firstTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, firstAsset.duration),
                     ofTrack: firstAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                     atTime: kCMTimeZero)
-            } catch _ {
+            } catch let firstTrackError as NSError {
+                
+                print(firstTrackError.localizedDescription)
             }
             
             let secondTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
                 preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+            
             do {
+                
                 try secondTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, secondAsset.duration),
                     ofTrack: secondAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                     atTime: firstAsset.duration)
-            } catch _ {
+            } catch let secondTrackError as NSError {
+                
+                print(secondTrackError.localizedDescription)
             }
             
             let thirdTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
                 preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+            
             do {
+                
                 try thirdTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, thirdAsset.duration),
                     ofTrack: thirdAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                     atTime: track1to2Time)
-            } catch _ {
+                
+            } catch let thirdTrackError as NSError {
+                
+                print(thirdTrackError.localizedDescription)
             }
 
             // Set up an overall instructions array
@@ -129,18 +142,20 @@ class MergeViewController: UIViewController, UINavigationControllerDelegate, UII
             // Add instruction composition to main composition and set frame rate to 30 per second.
             mainComposition.instructions = [mainInstruction]
             mainComposition.frameDuration = CMTimeMake(1, 30)
-            mainComposition.renderSize = CGSize(
-                width: UIScreen.mainScreen().bounds.width,
-                height: UIScreen.mainScreen().bounds.height)
+            mainComposition.renderSize = mixComposition.naturalSize
             // get audio
             if audioAsset != nil {
                 
                 let audioTrack: AVMutableCompositionTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: 0)
                 
                 do {
+                    
                     try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, totalTime), ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
                         atTime: kCMTimeZero)
-                } catch _ {
+                    
+                } catch let audioTrackError as NSError{
+                        
+                        print(audioTrackError.localizedDescription)
                 }
             }
             // get path
@@ -188,24 +203,6 @@ class MergeViewController: UIViewController, UINavigationControllerDelegate, UII
         }
         
         // Dismiss movie selection.
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-
-    func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
-        
-        let song: NSArray = [mediaItemCollection.items]
-        if song.count > 0 {
-            
-            let selectedSong: MPMediaItem! = song[0][0] as! MPMediaItem
-            let url: NSURL = selectedSong.valueForProperty(MPMediaItemPropertyAssetURL) as! NSURL
-            audioAsset = AVAsset(URL: url) 
-            print("Audio loaded")
-        }
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func mediaPickerDidCancel(mediaPicker: MPMediaPickerController) {
-        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -265,34 +262,35 @@ class MergeViewController: UIViewController, UINavigationControllerDelegate, UII
         
         // get the asset tracks current orientation
         let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
-        let assetTrack = asset.tracksWithMediaType(AVMediaTypeVideo)[0] 
-        let transform = assetTrack.preferredTransform
-        // identify the needed orientation
-        let assetInfo = orientationFromTransform(transform)
-        // find the size needed to fit the track in the screen for landscape
-        var scaleToFitRatio = UIScreen.mainScreen().bounds.width / assetTrack.naturalSize.width
-        
-        // if it is portrait, get the size to fit the track in the screen and return instruction to scale.
-        if assetInfo.isPortrait {
-            
-            scaleToFitRatio = UIScreen.mainScreen().bounds.width / assetTrack.naturalSize.height
-            let scaleFactor = CGAffineTransformMakeScale(scaleToFitRatio, scaleToFitRatio)
-            instruction.setTransform(CGAffineTransformConcat(assetTrack.preferredTransform, scaleFactor),
-                atTime: kCMTimeZero)
-        } else {
-        
-            // If it is landscape then check for incorrect orientation and correct if needed, then return instructon to re-orient and scale.
-            let scaleFactor = CGAffineTransformMakeScale(scaleToFitRatio, scaleToFitRatio)
-            var concat = CGAffineTransformConcat(CGAffineTransformConcat(assetTrack.preferredTransform, scaleFactor), CGAffineTransformMakeTranslation(0, UIScreen.mainScreen().bounds.width / 2))
-            if assetInfo.orientation == .Down {
-                let fixUpsideDown = CGAffineTransformMakeRotation(CGFloat(M_PI))
-                let windowBounds = UIScreen.mainScreen().bounds
-                let yFix = assetTrack.naturalSize.height + windowBounds.height
-                let centerFix = CGAffineTransformMakeTranslation(assetTrack.naturalSize.width, yFix)
-                concat = CGAffineTransformConcat(CGAffineTransformConcat(fixUpsideDown, centerFix), scaleFactor)
-            }
-            instruction.setTransform(concat, atTime: kCMTimeZero)
-        }
+//        let assetTrack = asset.tracksWithMediaType(AVMediaTypeVideo)[0] 
+//        let transform = assetTrack.preferredTransform
+//        // identify the needed orientation
+//        let assetInfo = orientationFromTransform(transform)
+//        // find the size needed to fit the track in the screen for landscape
+//        var scaleToFitRatio = UIScreen.mainScreen().bounds.width / assetTrack.naturalSize.width
+//        
+//        // if it is portrait, get the size to fit the track in the screen and return instruction to scale.
+//        if assetInfo.isPortrait {
+//            
+//            scaleToFitRatio = UIScreen.mainScreen().bounds.width / assetTrack.naturalSize.height
+//            let scaleFactor = CGAffineTransformMakeScale(scaleToFitRatio, scaleToFitRatio)
+//            instruction.setTransform(CGAffineTransformConcat(assetTrack.preferredTransform, scaleFactor),
+//                atTime: kCMTimeZero)
+//            
+//        } else {
+//        
+//            // If it is landscape then check for incorrect orientation and correct if needed, then return instructon to re-orient and scale.
+//            let scaleFactor = CGAffineTransformMakeScale(scaleToFitRatio, scaleToFitRatio)
+//            var concat = CGAffineTransformConcat(CGAffineTransformConcat(assetTrack.preferredTransform, scaleFactor), CGAffineTransformMakeTranslation(0, UIScreen.mainScreen().bounds.width / 2))
+//            if assetInfo.orientation == .Down {
+//                let fixUpsideDown = CGAffineTransformMakeRotation(CGFloat(M_PI))
+//                let windowBounds = UIScreen.mainScreen().bounds
+//                let yFix = assetTrack.naturalSize.height + windowBounds.height
+//                let centerFix = CGAffineTransformMakeTranslation(assetTrack.naturalSize.width, yFix)
+//                concat = CGAffineTransformConcat(CGAffineTransformConcat(fixUpsideDown, centerFix), scaleFactor)
+//            }
+//            instruction.setTransform(concat, atTime: kCMTimeZero)
+//        }
         
         return instruction
     }

@@ -21,9 +21,10 @@
 		8C1DFD181B98E3DA002CF8B9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD121B98E3DA002CF8B9 /* MobileCoreServices.framework */; };
 		8C1DFD191B98E3DA002CF8B9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD131B98E3DA002CF8B9 /* QuartzCore.framework */; };
 		8C1DFD1E1B98E84D002CF8B9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DFD1D1B98E84D002CF8B9 /* RecordViewController.swift */; };
-		8C1DFD201B98E86C002CF8B9 /* ViewSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DFD1F1B98E86C002CF8B9 /* ViewSelectViewController.swift */; };
 		8C1DFD221B98E8A6002CF8B9 /* MergeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DFD211B98E8A6002CF8B9 /* MergeViewController.swift */; };
-		8C1DFD241B98F3DC002CF8B9 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD231B98F3DC002CF8B9 /* Photos.framework */; };
+		8C1DFD241B98F3DC002CF8B9 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DFD231B98F3DC002CF8B9 /* Photos.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		8C41379C1BBE5B0D00AB587D /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C41379B1BBE5B0D00AB587D /* RecordAudioViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8C41379E1BC065E200AB587D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8C41379D1BC065E200AB587D /* .gitignore */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +56,10 @@
 		8C1DFD121B98E3DA002CF8B9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8C1DFD131B98E3DA002CF8B9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8C1DFD1D1B98E84D002CF8B9 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		8C1DFD1F1B98E86C002CF8B9 /* ViewSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSelectViewController.swift; sourceTree = "<group>"; };
 		8C1DFD211B98E8A6002CF8B9 /* MergeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeViewController.swift; sourceTree = "<group>"; };
 		8C1DFD231B98F3DC002CF8B9 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		8C41379B1BBE5B0D00AB587D /* RecordAudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
+		8C41379D1BC065E200AB587D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = "Filmer Prototype/.gitignore"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		8C1DFCDD1B98DEDC002CF8B9 = {
 			isa = PBXGroup;
 			children = (
+				8C41379D1BC065E200AB587D /* .gitignore */,
 				8C1DFD231B98F3DC002CF8B9 /* Photos.framework */,
 				8C1DFD0E1B98E3DA002CF8B9 /* AssetsLibrary.framework */,
 				8C1DFD0F1B98E3DA002CF8B9 /* AVFoundation.framework */,
@@ -163,8 +166,8 @@
 			children = (
 				8C1DFCF01B98DEDD002CF8B9 /* ViewController.swift */,
 				8C1DFD1D1B98E84D002CF8B9 /* RecordViewController.swift */,
-				8C1DFD1F1B98E86C002CF8B9 /* ViewSelectViewController.swift */,
 				8C1DFD211B98E8A6002CF8B9 /* MergeViewController.swift */,
+				8C41379B1BBE5B0D00AB587D /* RecordAudioViewController.swift */,
 			);
 			name = "Controller Layer";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				TargetAttributes = {
 					8C1DFCE51B98DEDD002CF8B9 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 8F48NKUJX6;
 					};
 					8C1DFCFD1B98DEDD002CF8B9 = {
 						CreatedOnToolsVersion = 6.4;
@@ -258,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C41379E1BC065E200AB587D /* .gitignore in Resources */,
 				8C1DFCF41B98DEDD002CF8B9 /* Main.storyboard in Resources */,
 				8C1DFCF91B98DEDD002CF8B9 /* LaunchScreen.xib in Resources */,
 				8C1DFCF61B98DEDD002CF8B9 /* Images.xcassets in Resources */,
@@ -278,12 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C41379C1BBE5B0D00AB587D /* RecordAudioViewController.swift in Sources */,
 				8C1DFCF11B98DEDD002CF8B9 /* ViewController.swift in Sources */,
 				8C1DFCEC1B98DEDD002CF8B9 /* AppDelegate.swift in Sources */,
 				8C1DFCEF1B98DEDD002CF8B9 /* Filmer_Prototype.xcdatamodeld in Sources */,
 				8C1DFD221B98E8A6002CF8B9 /* MergeViewController.swift in Sources */,
 				8C1DFD1E1B98E84D002CF8B9 /* RecordViewController.swift in Sources */,
-				8C1DFD201B98E86C002CF8B9 /* ViewSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,10 +418,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Filmer Prototype/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ericmentele.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
 		};
@@ -424,10 +433,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Filmer Prototype/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ericmentele.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
 		};

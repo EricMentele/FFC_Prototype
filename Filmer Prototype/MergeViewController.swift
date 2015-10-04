@@ -262,35 +262,6 @@ class MergeViewController: UIViewController, UINavigationControllerDelegate, UII
         
         // get the asset tracks current orientation
         let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
-//        let assetTrack = asset.tracksWithMediaType(AVMediaTypeVideo)[0] 
-//        let transform = assetTrack.preferredTransform
-//        // identify the needed orientation
-//        let assetInfo = orientationFromTransform(transform)
-//        // find the size needed to fit the track in the screen for landscape
-//        var scaleToFitRatio = UIScreen.mainScreen().bounds.width / assetTrack.naturalSize.width
-//        
-//        // if it is portrait, get the size to fit the track in the screen and return instruction to scale.
-//        if assetInfo.isPortrait {
-//            
-//            scaleToFitRatio = UIScreen.mainScreen().bounds.width / assetTrack.naturalSize.height
-//            let scaleFactor = CGAffineTransformMakeScale(scaleToFitRatio, scaleToFitRatio)
-//            instruction.setTransform(CGAffineTransformConcat(assetTrack.preferredTransform, scaleFactor),
-//                atTime: kCMTimeZero)
-//            
-//        } else {
-//        
-//            // If it is landscape then check for incorrect orientation and correct if needed, then return instructon to re-orient and scale.
-//            let scaleFactor = CGAffineTransformMakeScale(scaleToFitRatio, scaleToFitRatio)
-//            var concat = CGAffineTransformConcat(CGAffineTransformConcat(assetTrack.preferredTransform, scaleFactor), CGAffineTransformMakeTranslation(0, UIScreen.mainScreen().bounds.width / 2))
-//            if assetInfo.orientation == .Down {
-//                let fixUpsideDown = CGAffineTransformMakeRotation(CGFloat(M_PI))
-//                let windowBounds = UIScreen.mainScreen().bounds
-//                let yFix = assetTrack.naturalSize.height + windowBounds.height
-//                let centerFix = CGAffineTransformMakeTranslation(assetTrack.naturalSize.width, yFix)
-//                concat = CGAffineTransformConcat(CGAffineTransformConcat(fixUpsideDown, centerFix), scaleFactor)
-//            }
-//            instruction.setTransform(concat, atTime: kCMTimeZero)
-//        }
         
         return instruction
     }

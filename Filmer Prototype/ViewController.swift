@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     
     var isShowingLandscapeView = false
     
-    // view movies
     let movieViewer = UIImagePickerController()
     
     // dedicated album creation
